@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d#d*e1(nyi1o8cidww(h6t2b=wn#$z6y8xe(22pbp_7p+1c!8d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -123,6 +123,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS =[os.path.join(BASE_DIR, 'blog/static')]
 
 ALLOWED_HOSTS=['*']
+PORT = os.getenv('PORT', '8000')  # Si no encuentra el PORT, usará el puerto 8000
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
