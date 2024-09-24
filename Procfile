@@ -1,1 +1,3 @@
-web: gunicorn --bind 0.0.0.0:$PORT django_project.wsgi:application
+web: gunicorn django_project.wsgi --log-file - 
+#or works good with external database
+web: python manage.py migrate && gunicorn django_project.wsgi
